@@ -6,28 +6,11 @@
 выполнения задач.
 
 ## Установка
-1) Склонируйте репозиторий с помощью команды:
+1) Для установки всех зависимостей выполните комнду:
 ```
-git clone https://github.com/Crekan/todo_project.git
+npm install
 ```
-2) Перейдите в папку с программой:
-```
-cd todo_project
-```
-3) Запустите новый Virtualenv
-```
-virtualenv venv
-source venv/bin/activate
-```
-4) Установите необходимые зависимости:
-```
-pip install -r requirements.txt
-```
-5) Создайте базу данных PostgreSQL
-```
-CREATE DATABASE todo_db;
-```
-6) В файле settings.py поменяйте настроку DATABASES
+2) В файле settings.py поменяйте настроку DATABASES
 ```
 DATABASES = {
     'default': {
@@ -40,22 +23,11 @@ DATABASES = {
     }
 }
 ```
-7) Создайте миграции для базы данных:
-
-```
-python manage.py makemigrations
-python manage.py migrate
-```
-8) Создайте суперпользователя, чтобы иметь доступ к 
-административной панели:
-```
-python manage.py createsuperuser
-```
-9) Запустите сервер:
+3) Запустите сервер командой:
 ```
 python manage.py runserver
 ```
-10) Откройте веб-браузер и перейдите по адресу 
+4) Откройте веб-браузер и перейдите по адресу 
 http://localhost:8000/
 
 
