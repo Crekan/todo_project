@@ -23,11 +23,11 @@ source venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
-4) Создайте базу данных PostgreSQL
+5) Создайте базу данных PostgreSQL
 ```
 CREATE DATABASE todo_db;
 ```
-5) В файле settings.py поменяйте настроку DATABASES
+6) В файле settings.py поменяйте настроку DATABASES
 ```
 DATABASES = {
     'default': {
@@ -40,22 +40,22 @@ DATABASES = {
     }
 }
 ```
-6) Создайте миграции для базы данных:
+7) Создайте миграции для базы данных:
 
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
-5) Создайте суперпользователя, чтобы иметь доступ к 
+8) Создайте суперпользователя, чтобы иметь доступ к 
 административной панели:
 ```
 python manage.py createsuperuser
 ```
-6) Запустите сервер:
+9) Запустите сервер:
 ```
 python manage.py runserver
 ```
-7) Откройте веб-браузер и перейдите по адресу 
+10) Откройте веб-браузер и перейдите по адресу 
 http://localhost:8000/
 
 
