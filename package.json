@@ -4,6 +4,6 @@
   "description": "My Django application",
   "main": "manage.py",
   "scripts": {
-    "postinstall": "git clone <https://github.com/Crekan/todo_project.git> . && cd todo_project && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && CREATE DATABASE todo_db && python manage.py migrate && python manage.py createsuperuser && python manage.py runserver"
+    "postinstall": "git clone https://github.com/Crekan/todo_project.git && cd todo_project && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && CREATE DATABASE todo_db && python manage.py migrate && python manage.py createsuperuser && python manage.py runserver"
   }
 }
