@@ -6,7 +6,6 @@
 
 {% block content %}
     <h1>Task List</h1>
-    {% if user.is_authenticated %}
         <ul>
             {% for task in tasks %}
                 <li>{{ task.title }} - {{ task.description }} - {% if task.completed %}Completed{% else %}Not
@@ -17,7 +16,4 @@
             {% endfor %}
         </ul>
         <a href="{% url 'todo:task_create' %}">Create Task</a>
-    {% else %}
-        <h3><a href="{% url 'login' %}">Please log in to your account</a></h3>
-    {% endif %}
 {% endblock %}

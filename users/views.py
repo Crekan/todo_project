@@ -22,7 +22,7 @@ class UserRegisterView(View):
 
         if form.is_valid():
             form.save()
-            return redirect('users:login')
+            return redirect('login')
 
         context = {
             'form': form,

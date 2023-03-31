@@ -1,16 +1,21 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 from .forms import TaskForm
 from .models import Task
 
 
+@method_decorator(login_required, name='dispatch')
 class TaskList(ListView):
     model = Task
-    queryset = Task.objects.all()
     template_name = 'todo/task_list.html'
     context_object_name = 'tasks'
+
+    def get_queryset(self):
+        return Task.objects.filter(user=self.request.user)
 
 
 class TaskCreate(LoginRequiredMixin, CreateView):
