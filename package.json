@@ -1,0 +1,15 @@
+{
+  "name": "my-django-app",
+  "version": "1.0.0",
+  "description": "My Django application",
+  "main": "manage.py",
+  "scripts": {
+    "clone": "git clone https://github.com/Crekan/todo_project.git",
+    "venv": "virtualenv venv",
+    "active-venv": "source venv/bin/activate",
+    "install-deps": "pip install -r requirements.txt",
+    "migrate": "python manage.py migrate",
+    "makemigrations": "python manage.py makemigrations",
+    "superuser": "python manage.py createsuperuser"
+  }
+}
