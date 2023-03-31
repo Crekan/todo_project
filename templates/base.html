@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+
+<ul>
+    <li>Users - {{ user }}</li>
+    <li><a href="{% url 'todo:task_list' %}">Home</a></li>
+    {% if user.is_authenticated %}
+        <li><a href="{% url 'profile' user.id %}">Profile</a> | <a href="{% url 'logout' %}">logout</a></li>
+    {% else %}
+        <li><a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">register</a></li>
+    {% endif %}
+</ul>
+<hr>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
